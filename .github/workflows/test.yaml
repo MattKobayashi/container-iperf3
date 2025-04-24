@@ -1,17 +1,7 @@
 ---
-name: Test
-on:
-  pull_request:
-    branches:
-      - main
-    paths:
-      - "**.json"
-      - "**.yaml"
-      - "Dockerfile"
-  workflow_dispatch:
 jobs:
-  container:
-    name: Container
+  image:
+    name: Image
     permissions:
       contents: read
     runs-on: ubuntu-24.04
@@ -33,3 +23,13 @@ jobs:
         run: |
           docker compose --progress plain up --build --exit-code-from iperf3-client
         timeout-minutes: 5
+name: Test
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "**.json"
+      - "**.yaml"
+      - "Dockerfile"
+  workflow_dispatch:
