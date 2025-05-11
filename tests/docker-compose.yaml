@@ -2,7 +2,7 @@
 services:
   iperf3-server:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     command: ["--server"]
     container_name: iperf3-server
@@ -10,7 +10,7 @@ services:
       - iperf3
   iperf3-client:
     build:
-      context: .
+      context: ..
       dockerfile: Dockerfile
     command: ["--client", "iperf3-server"]
     container_name: iperf3-client
