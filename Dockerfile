@@ -1,7 +1,7 @@
 FROM alpine:3.22.1@sha256:4bcff63911fcb4448bd4fdacec207030997caf25e9bea4045fa6c8c44de311d1 AS buildenv
 
-ENV SOURCE_URL=https://github.com/esnet/iperf/releases/download/3.18/iperf-3.18.tar.gz \
-    SOURCE_SHA256SUM_URL=https://github.com/esnet/iperf/releases/download/3.18/iperf-3.18.tar.gz.sha256
+ENV SOURCE_URL=https://github.com/esnet/iperf/releases/download/3.19.1/iperf-3.19.1.tar.gz \
+    SOURCE_SHA256SUM_URL=https://github.com/esnet/iperf/releases/download/3.19.1/iperf-3.19.1.tar.gz.sha256
 
 # Download source file, extract and compile
 WORKDIR /iperf3
