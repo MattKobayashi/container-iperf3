@@ -1,4 +1,4 @@
-FROM alpine:3.23.3@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659 AS buildenv
+FROM alpine:3.23.4@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11 AS buildenv
 
 ENV SOURCE_URL=https://github.com/esnet/iperf/releases/download/3.19.1/iperf-3.19.1.tar.gz \
     SOURCE_SHA256SUM_URL=https://github.com/esnet/iperf/releases/download/3.19.1/iperf-3.19.1.tar.gz.sha256
@@ -14,7 +14,7 @@ RUN apk --no-cache add tar build-base \
     && make \
     && make install
 
-FROM alpine:3.23.3@sha256:25109184c71bdad752c8312a8623239686a9a2071e8825f20acb8f2198c3f659
+FROM alpine:3.23.4@sha256:5b10f432ef3da1b8d4c7eb6c487f2f5a8f096bc91145e68878dd4a5019afde11
 
 # Copy relevant compiled files to distribution image
 RUN adduser --system iperf3 \
